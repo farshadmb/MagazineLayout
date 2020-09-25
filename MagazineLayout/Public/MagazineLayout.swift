@@ -22,7 +22,7 @@ import UIKit
 ///
 /// Returning different `MagazineLayoutItemSizeMode`s from the delegate protocol implementation will
 /// change how many items are displayed in a row and how each item sizes vertically.
-public open class MagazineLayout: UICollectionViewLayout {
+open class MagazineLayout: UICollectionViewLayout {
 
   // MARK: Lifecycle
 
