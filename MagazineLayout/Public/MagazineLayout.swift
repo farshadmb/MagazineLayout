@@ -35,7 +35,7 @@ open class MagazineLayout: UICollectionViewLayout {
     super.init()
   }
 
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     _flipsHorizontallyInOppositeLayoutDirection = true
     super.init(coder: aDecoder)
   }
