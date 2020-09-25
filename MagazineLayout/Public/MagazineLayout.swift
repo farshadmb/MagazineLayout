@@ -22,7 +22,7 @@ import UIKit
 ///
 /// Returning different `MagazineLayoutItemSizeMode`s from the delegate protocol implementation will
 /// change how many items are displayed in a row and how each item sizes vertically.
-public final class MagazineLayout: UICollectionViewLayout {
+public open class MagazineLayout: UICollectionViewLayout {
 
   // MARK: Lifecycle
 
@@ -658,7 +658,8 @@ public final class MagazineLayout: UICollectionViewLayout {
   }
 
   override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-    return  collectionView?.bounds.size.width != .some(newBounds.size.width) ||
+    return  collectionView?.bounds.size.width != .some(newBounds.size.width) || 
+        collectionView?.bounds.size.height != .some(newBounds.size.height) ||
       hasPinnedHeaderOrFooter
   }
 
@@ -672,7 +673,7 @@ public final class MagazineLayout: UICollectionViewLayout {
     invalidationContext.contentSizeAdjustment = CGSize(
       width: newBounds.width - currentCollectionView.bounds.width,
       height: newBounds.height - currentCollectionView.bounds.height)
-    invalidationContext.invalidateLayoutMetrics = false
+    invalidationContext.invalidateLayoutMetrics = true
 
     return invalidationContext
   }
