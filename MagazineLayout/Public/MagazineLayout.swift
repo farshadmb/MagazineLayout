@@ -658,9 +658,7 @@ open class MagazineLayout: UICollectionViewLayout {
   }
 
   override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-    return  collectionView?.bounds.size.width != .some(newBounds.size.width) || 
-        collectionView?.bounds.size.height != .some(newBounds.size.height) ||
-      hasPinnedHeaderOrFooter
+    return  true
   }
 
   override public func invalidationContext(
